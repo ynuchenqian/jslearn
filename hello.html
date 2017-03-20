@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var a=[];
+    a.push(1,2,3);
+    a.reverse();
+    var points=[{x:1,y:0},{x:1,y:1}];
+    points.dist=function () {
+        var p1=this[0];
+        var p2=this[1];
+        var a=p2.x-p1.x;
+        var b=p2.y-p1.y;
+        return Math.sqrt(a*a+b*b);
+    }
+    console.info(points.dist());
+    //计算阶乘运算
+    function factorial(n) {
+        var product=1;
+        while (n>1){
+            product*=n;
+            n--;
+        }
+        return product;
+    }
+    //阶乘的第二种实现
+   function factorial2(n){
+      var product=1;
+      for(var i=2;i<=n;i++)
+      product*=i;
+      return product;
+
+   }
+    console.info(factorial2(5));
+    //使用new关键字和构造函数来创建一个实例
+    function Point(x,y) {
+        this.x=x;
+        this.y=y;
+    }
+
+
+
+    var p=new Point(1,1);
+    //来给Point对象定义方法
+    Point.prototype.r=function () {
+        return Math.sqrt(this.x*this.x+this.y*this.y);
+    };
+
+    console.info(p.r());
+
+</script>
+
+
+
+
+
+
+<body>
+
+</body>
+</html>
